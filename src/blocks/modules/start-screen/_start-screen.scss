@@ -1,0 +1,221 @@
+.start-screen {
+  &__container {
+    @media(max-width: $mobile-xl) {
+      padding: 0 !important;
+    }
+  }
+  &__wrap {
+    position: relative;
+    padding: 140px 0;
+    min-height: 750px;
+    overflow: hidden;
+    @media(max-width: $laptop-m) {
+      padding: 90px 0;
+      min-height: 600px;
+    }
+    @media(max-width: $tablet) {
+      padding: 60px 0;
+      min-height: 550px;
+    }
+    @media(max-width: $mobile-xl) {
+      min-height: 515px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    @media(max-width: $mobile-s) {
+      padding: 40px 20px;
+    }
+  }
+  &__content {
+    position: relative;
+  }
+  &__title {
+    font-weight: bold;
+    color: $color-second;
+    font-size: 74px;
+    @media(max-width: $laptop-m) {
+      font-size: 70px;
+    }
+    @media(max-width: $tablet) {
+      font-size: 54px;
+    }
+    @media(max-width: $mobile-xl) {
+      font-size: 37px;
+    }
+    @media(max-width: $mobile-xs) {
+      font-size: 34px;
+    }
+  }
+  &__text {
+    color: $color-second;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 90px;
+    line-height: 1.2;
+    max-width: 600px;
+    @media(max-width: $laptop-m) {
+      font-size: 19px;
+      margin-bottom: 80px;
+      max-width: 550px;
+    }
+    @media(max-width: $tablet) {
+      font-size: 16px;
+      margin-bottom: 60px;
+      max-width: 400px;
+    }
+    @media(max-width: $mobile-xl) {
+      font-size: 14px;
+      margin-bottom: 50px;
+      max-width: 280px;
+    }
+    @media(max-width: $mobile-xs) {
+      max-width: 260px;
+    }
+  }
+  .circle-big {
+    top: -46px;
+    left: 146px;
+    @media(max-width: $tablet) {
+      top: -49px;
+      left: 89px;
+    }
+    @media(max-width: $mobile-xl) {
+      left: 32px;
+    }
+  }
+  .circle-small {
+    bottom: -145px;
+    right: 340px;
+    @media(max-width: $laptop-m) {
+      bottom: -96px;
+      right: 273px;
+    }
+    @media(max-width: $mobile-xl) {
+      right: 148px;
+      bottom: -93px;
+    }
+  }
+  &__buttons {
+    @include flex();
+    @media(max-width: $mobile-xl) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .button {
+      margin-right: 60px;
+      @media(max-width: $mobile-xl) {
+        margin-right: 0px;
+        margin-bottom: 30px;
+      }
+      &:last-child {
+        margin-right: 0;
+        @media(max-width: $mobile-xl) {
+          margin-bottom: 0px;  
+        }
+      }
+    }
+  }
+}
+.dna {
+  &__wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(-45deg);
+    @media(max-width: $mobile-xl) {
+      right: -113px;
+    }
+    @media(max-width: $mobile-m) {
+      right: -183px;
+    }
+    @media(max-width: $mobile-s) {
+      right: -200px;
+    }
+    @media(max-width: $mobile-xs) {
+      right: -210px;
+    }
+  }
+  &__list {
+    position: absolute;
+    width: 320px;
+    height: 280px;
+    left: -65px;
+    top: 117px;
+    transform: translate(-100%, -100%) rotateZ(45deg);
+    @media(max-width: $tablet) {
+      left: -48px;
+      top: 125px;
+    }
+  }
+  &__item {
+    position: absolute;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background: $color-second;
+    border-radius: 100%;
+    opacity: 0;
+  }
+}
+@media(min-width: $laptop-m+1) {
+  $i: 1;
+  @while $i < 36 {
+    .dna__item:nth-child(#{$i}) {
+      top: $i * 20px;
+      background: $color-saturated;
+      animation: dna_rotate 3s $i * 0.13s infinite ease-in-out;
+      @if($i % 2 == 0) {
+        background: $color-light;
+        animation:dna_rotate 3s $i * 0.13s + 3s / 2 infinite ease-in-out;
+      }
+    }
+    $i: $i + 1;
+  }
+}
+@media(max-width: $laptop-m) {
+  $i: 1;
+  @while $i < 26 {
+    .dna__item:nth-child(#{$i}) {
+      top: $i * 20px;
+      background: $color-saturated;
+      animation: dna_rotate 3s $i * 0.13s infinite ease-in-out;
+      @if($i % 2 == 0) {
+        background: $color-light;
+        animation:dna_rotate 3s $i * 0.13s + 3s / 2 infinite ease-in-out;
+      }
+    }
+    $i: $i + 1;
+  }
+}
+
+@keyframes dna_rotate {
+  0%   { 
+    opacity: 1;
+    transform: scale(1);
+    left:20%;
+    z-index: 0;
+  }
+  25%  { 
+    opacity: 1;
+    transform: scale(1.75);
+  }
+  50%  { 
+    opacity: 1;
+    left:80%;
+    z-index: 1; 
+    box-shadow: 0 0 6px 3px rgba(35,40,55,0.5);
+    transform: scale(1);
+  }
+  75%  {
+    opacity: 1;
+    transform: scale(0.25);
+    z-index: 0;
+  }
+  100% {
+    opacity: 1;
+    left:20%;
+    z-index: 0;
+    transform: scale(1);
+  }
+}

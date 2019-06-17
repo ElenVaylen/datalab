@@ -1,0 +1,8 @@
+mixin button(title, type, className)
+  if type == 'a'
+    a.button(href="#")(class=className)
+      span._title= title
+  else 
+    button.button(class=className)
+      span._title= title
+    

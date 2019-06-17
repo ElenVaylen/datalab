@@ -1,0 +1,114 @@
+.fields-slider {
+  &__wrap {
+    position: relative;
+    margin-top: 30px;
+    @media screen and (max-width: $mobile-xl) {
+      margin-top: 20px;
+    }
+    @media screen and (max-width: $mobile-m) {
+      margin-top: 15px;
+    }
+  }
+  &__content {
+    position: relative;
+  }
+  &__init {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  &__base {
+    position: relative;
+    @include flex();
+    // margin: 0 7px;
+    padding-top: 17px;
+    &:before {
+      content:'';
+      background: url('../img/field_line.png');
+      height: 4px;
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      width: 100%;
+    }
+  }
+  &__handle {
+    background: url('../img/field_cursor.png') no-repeat top center;
+    height: 17px;
+    width: 26px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    z-index: 2;
+  }
+  &__slide {
+    height: 18px;
+    position: relative;
+    width: 20%;
+    &:first-child {
+      width: 20%;
+    }
+    &:nth-child(2) {
+      width: 30%;
+    }
+    &:nth-child(3) {
+      width: 30%;
+    }
+  }
+  &__item {
+    padding-top: 30px;
+    width: 20%;
+    position: relative;
+    @media screen and (max-width: $mobile-xl) {
+      padding-top: 25px;
+    }
+    &-text {
+      color: $color-title;
+      font-weight: bold;
+      font-size: 13px;
+      line-height: 1.25;
+      max-width: 170px;
+      @media screen and (max-width: $mobile-xl) {
+        font-size: 12px;
+        max-width: 95px;
+      }
+      @media screen and (max-width: $mobile-m) {
+        font-size: 11px;
+        max-width: 80px;
+      }
+    }
+    &:before {
+      content:'';
+      background: url('../img/field_line-vertical.png');
+      height: 12px;
+      width: 2px;
+      position: absolute;
+      top: 1px;
+      left: 0;
+    }
+    &:first-child {
+      width: 20%;
+      @media screen and (max-width: $mobile-m) {
+        padding-right: 5px;
+      }
+      &:before {
+        height: 24px;
+      }
+    }
+    &:nth-child(2) {
+      width: 30%;
+    }
+    &:nth-child(3) {
+      width: 30%;
+    }
+    &:last-child {
+      text-align: right;
+      &:before {
+        right: -1px;
+        left: initial;
+        height: 24px;
+      }
+    }
+  }
+}

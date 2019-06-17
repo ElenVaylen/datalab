@@ -1,0 +1,17 @@
+include ../../components/fields-title/fields-title
+
+mixin fields-slider__item(text)
+  .fields-slider__item
+    .fields-slider__item-text= text
+
+.fields-slider
+  +fields-title('Уровень владения JavaScript')
+  ._wrap
+    ._content
+      input._init#slider(type="range" min="1" max="4" step="1" value="2")
+      .__handle
+      ._base
+        +fields-slider__item('Не владею')
+        +fields-slider__item('Использую готовые решения')
+        +fields-slider__item('Использую готовые решения и умею их переделывать')
+        +fields-slider__item('Пишу сложный JS с нуля')

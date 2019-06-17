@@ -1,0 +1,43 @@
+.lang {
+  &__row {
+    @include flex();
+    align-items: center;
+  }
+  &__item {
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &-link {
+      color: $color-second;
+      font-size: 14px;
+      position: relative;
+      @media(max-width: $tablet) {
+        font-size: 12px;
+      }
+      &:after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        border-bottom: 1px solid transparent;
+        transition: border 0.25s ease-in-out, width 0.25s ease-in-out;
+      }
+      .lang-active & {
+        &:after {
+          width: 100%;
+          border-color: $color-second;
+        }
+      }
+      &:hover {
+        color: $color-second;
+        &:after {
+          width: 100%;
+          border-color: $color-second;
+        }
+      }
+    }
+  }
+}

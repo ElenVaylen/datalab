@@ -1,0 +1,18 @@
+include ../../components/button/button
+
+section.start-screen
+  ._container.container
+    ._wrap
+      ._content
+        h1._title Интерактивная<br>лаборатория_
+        p._text Разработчики в области проектирования цифровых продуктов с целью успешного развития вашего бизнеса
+        ._buttons
+          +button('Связаться', 'button', 'button__type1')
+          +button('Подробнее', 'button', 'button__type2')
+        .circle.circle-big
+        .circle.circle-small
+      .dna
+        ._wrap
+          ._list
+            -for (var x = 1; x < 36; x++)
+              ._item

@@ -1,0 +1,16 @@
+mixin menu_item(title, link)
+  li.menu__item
+    a.menu__link(href=link)= title
+
+nav.menu
+  ._bar
+    ._bar-wrap
+      ._bar-line.bar-line__top
+      ._bar-line.bar-line__bot
+  ._list
+    ._wrap
+      ul._row
+        +menu_item('Проекты', '#')
+        +menu_item('Услуги', '#')
+        +menu_item('Вакансии', '#')
+        +menu_item('Контакты', '#')

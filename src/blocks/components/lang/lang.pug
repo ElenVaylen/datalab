@@ -1,0 +1,12 @@
+mixin lang_item(title, src, active)
+  if (active == true)
+    .lang__item.lang-active
+      a.lang__item-link(href=src)= title
+  else
+    .lang__item
+      a.lang__item-link(href=src)= title
+
+.lang
+  ._row
+    +lang_item('ENG','#')
+    +lang_item('RUS','#', true)

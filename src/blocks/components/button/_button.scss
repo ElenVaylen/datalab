@@ -1,0 +1,97 @@
+.button {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  position: relative;
+  height: 48px;
+  width: 212px;
+  @include flex();
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  cursor: pointer;
+  @media(max-width: $mobile-xl) {
+    height: 50px;
+  }
+  &__title {
+    position: relative;
+    &:after {
+      position: relative;
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-right: 1px solid $color-second;
+      border-top: 1px solid $color-second;
+      transform: rotate(45deg);
+      margin-left: 22px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &__type1 {
+    background-color: $color-light;
+    color: $color-bg;
+    border-radius: 35px;
+    overflow: hidden;
+    .button__title {
+      &:after {
+        border-color: $color-bg;
+        position: absolute;
+        top: 4px;
+        right: -34px;
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transform: translateX(100%);
+      background: linear-gradient(to right, $color-light 0%, darken($color-light, 8%) 30%, $color-light 100%);
+      z-index: -1;
+      transition: all 0.4s ease-in-out;
+    }
+    @media(min-width: $tablet+1) {
+      &:hover {
+        color: $color-bg;
+        transform: translate(0, -5px);
+        box-shadow: 0 5px 15px rgba(40,49,74,0.15);
+        &:after {
+          transform: translateX(-20%);
+        }
+      }
+    }
+    &:disabled {
+      background-color: darken($color: $color-light, $amount: 10%);
+    }
+  }
+  &__type2 {
+    color: $color-second;
+    font-weight: 300;
+    @media(max-width: $mobile-xl) {
+      border-radius: 35px;
+      border: 1px solid $color-second;
+    }
+    @media(min-width: $tablet+1) {
+      &:hover {
+        .button__title {
+          &:after {
+            margin-left: 25px;
+          }
+        }
+      }
+    }
+    &:disabled {
+      color: $color-disabled;
+      border-color: $color-disabled;
+      .button__title {
+        &:after {
+          border-color: $color-disabled;
+        }
+      }
+    }
+  }
+}

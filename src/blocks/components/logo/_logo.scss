@@ -1,0 +1,15 @@
+.logo {
+  &-link {
+    display: block;
+    width: 190px;
+    height: 46px;
+    @media(max-width: $tablet) {
+      width: 166px;
+      height: 40px;
+    }
+    @media(max-width: $mobile-xs) {
+      width: 136px;
+      height: 33px;
+    }
+  }
+}
