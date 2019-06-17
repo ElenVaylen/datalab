@@ -11,6 +11,9 @@
   transition: all 0.3s ease-in-out;
   background-color: transparent;
   cursor: pointer;
+  @media(max-width: $tablet) {
+    cursor: auto;
+  }
   @media(max-width: $mobile-xl) {
     height: 50px;
   }

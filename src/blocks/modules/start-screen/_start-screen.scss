@@ -82,6 +82,9 @@
     @media(max-width: $mobile-xl) {
       left: 32px;
     }
+    @media(max-width: $mobile-s) {
+      top: -36px;
+    }
   }
   .circle-small {
     bottom: -145px;
@@ -93,6 +96,9 @@
     @media(max-width: $mobile-xl) {
       right: 148px;
       bottom: -93px;
+    }
+    @media(max-width: $mobile-s) {
+      right: 84px;
     }
   }
   &__buttons {
